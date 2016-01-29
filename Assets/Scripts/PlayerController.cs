@@ -4,6 +4,8 @@ using XboxCtrlrInput;
 
 public class PlayerController : MonoBehaviour {
 	private Vector3 newPosition;
+	private bool interaction_available;
+	private Collider interaction_object;
 
 	public Transform target;
 
@@ -36,12 +38,20 @@ public class PlayerController : MonoBehaviour {
 		float newPosZ = newPosition.z + (axisY * maxMoveSpeed);
 		newPosition = new Vector3(newPosX, transform.position.y, newPosZ);
 		transform.position = newPosition;
+
+		// Check for interaction 
+		if (interaction_available && XCI.GetButton (XboxButton.X, playerNumber)) {
+			interaction_object.gameObject.SetActive(false);
+		}
 	}
 
 	void OnTriggerEnter(Collider other) {
-		if (other.gameObject.CompareTag("interactable") && XCI.GetButton(XboxButton.X, playerNumber)) {
-			Debug.Log (other.gameObject.tag);
-			other.gameObject.SetActive (false);
+		if (other.gameObject.CompareTag("interactable")) {
+			interaction_available = true;
+			interaction_object = other;
+		}
+		else {
+			interaction_available = true;
 		}
 	}
 }
