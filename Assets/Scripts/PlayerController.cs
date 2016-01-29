@@ -39,7 +39,8 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
-		if (other.gameObject.CompareTag("Interactable")) {
+		if (other.gameObject.CompareTag("interactable") && XCI.GetButton(XboxButton.X, playerNumber)) {
+			Debug.Log (other.gameObject.tag);
 			other.gameObject.SetActive (false);
 		}
 	}
