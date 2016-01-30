@@ -3,43 +3,32 @@ using System.Collections;
 using XboxCtrlrInput;
 
 
-<<<<<<< HEAD
-public class PlayerController : MonoBehaviour, Iinteractable {
+public class PlayerController : MonoBehaviour {
+	public bool paused;
+	public int playerNumber;
+	public Transform target;
 	private Vector3 direction;
 	private bool interaction_available = false;
 	private bool can_interact = true;
 	private Collider interaction_object;
 	private Iinteractable interaction_gameobject;
-=======
-public class PlayerController : MonoBehaviour {
-	public bool paused;
->>>>>>> d2f1ddd661ac91607e66e6ca69eb0f01450fd5df
-	public Transform target;
 	public float turnSpeed;
 	public float moveSpeed;
-	public int playerNumber = 0;
-<<<<<<< HEAD
-	Rigidbody RB;
-=======
-	private float pause_timeout;
->>>>>>> d2f1ddd661ac91607e66e6ca69eb0f01450fd5df
 
+	Rigidbody RB;
+
+	private float pause_timeout;
 	public GameController gc;
 	private Vector3 newPosition;
-	private bool interaction_available = false;
-	private bool can_interact = true;
-	private Collider interaction_object;
-	private Iinteractable interaction_gameobject;
 
 	// Use this for initialization
 	void Start () {
-<<<<<<< HEAD
-		RB = this.transform.GetComponent<Rigidbody>();
-=======
-		gc = GameObject.Find("GameController").GetComponent<GameController>();
->>>>>>> d2f1ddd661ac91607e66e6ca69eb0f01450fd5df
+
+		RB = this.transform.GetComponent<Rigidbody> ();
+
+		gc = GameObject.Find ("GameController").GetComponent<GameController> ();
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		// (un)pause game
