@@ -19,6 +19,9 @@ public class PlayerController : MonoBehaviour {
 	private Transform door1;
 	private Transform door2;
 	private bool door_open;
+	private bool shoveling;
+	public float jumpForce;
+	Animator Ani;
 
 	public float smooth = 2.0F;
 
@@ -30,7 +33,9 @@ public class PlayerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		shoveling = false;
+		Ani=transform.GetChild(0).transform.GetComponent<Animator>();
+		Ani.SetBool("Lopend", false);
 		RB = this.transform.GetComponent<Rigidbody> ();
 
 		gc = GameObject.Find ("GameController").GetComponent<GameController> ();
@@ -63,6 +68,27 @@ public class PlayerController : MonoBehaviour {
 		direction = new Vector3(dirX, transform.position.y, dirZ);
 		RB.AddForce(moveSpeed * direction);
 
+		// Jump
+		if(XCI.GetButton (XboxButton.A, playerNumber)){
+			if (Physics.Raycast(transform.position, Vector3.down)) {
+				RB.AddForce(Vector3.up*jumpForce);
+			}
+
+		}
+
+		// Walk animation
+		if(dirX!=0 && dirZ!=0){
+			Ani.SetBool("Lopend", true);
+		}else{
+			Ani.SetBool("Lopend", false);
+		}
+
+		// Hold animation
+		if (!can_interact && !shoveling) {
+			Ani.SetBool("Dragend", true);
+		}else{
+			Ani.SetBool("Dragend", false);
+		}
 
 		// Check/trigger interaction 
 		if (interaction_available && can_interact && XCI.GetButton (XboxButton.X, playerNumber)) {
