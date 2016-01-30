@@ -83,6 +83,7 @@ public class PlayerController : MonoBehaviour {
 			}
 		}
 		if (other.gameObject.CompareTag("zombie")) {
+			Debug.Log ("Game over");
 			pausedText.text = "Game over";
 		}
 	}

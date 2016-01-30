@@ -827,7 +827,7 @@ MonoBehaviour:
   target: {fileID: 0}
   turnSpeed: 0.2
   moveSpeed: 0
-  pausedText: {fileID: 0}
+  pausedText: {fileID: 1564252485}
   gc: {fileID: 0}
 --- !u!4 &1080992270
 Transform:
