@@ -3,7 +3,7 @@ using System.Collections;
 using XboxCtrlrInput;
 
 
-public class PlayerController : MonoBehaviour, Iinteractable {
+public class PlayerController : MonoBehaviour {
 	private Vector3 newPosition;
 	private bool interaction_available = false;
 	private bool can_interact = true;
@@ -15,8 +15,6 @@ public class PlayerController : MonoBehaviour, Iinteractable {
 	public float maxMoveSpeed;
 	public int playerNumber = 0;
 
-	public void Interact(PlayerController playercontroller) {
-	}
 
 	// Use this for initialization
 	void Start () {
@@ -46,23 +44,19 @@ public class PlayerController : MonoBehaviour, Iinteractable {
 		if (interaction_available && can_interact && XCI.GetButton (XboxButton.X, playerNumber)) {
 			can_interact = false;
 			interaction_gameobject.Interact (this);
-			transform.parent = gameObject.transform;
-			//interaction_object.gameObject.SetActive(false);
 		}
+
 		if (!can_interact && !(XCI.GetButton (XboxButton.X, playerNumber))) {
-			interaction_object.transform.parent = null;
+			interaction_gameobject.StopInteract (this);
 			can_interact = true;
 		}
 	}
 
 	void OnTriggerEnter(Collider other) {
-		if (other.CompareTag ("interactable") && can_interact) {
+		Debug.Log(other.gameObject);
+		if (other.gameObject.CompareTag("interactable") && can_interact) {
 			interaction_available = true;
-			interaction_object = other;
-			if (interaction_object is Iinteractable) {
-				interaction_gameobject = (Iinteractable)interaction_object;
-
-			}
+			interaction_gameobject = other.GetComponent<Iinteractable>();
 		}
 	}
 

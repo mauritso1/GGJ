@@ -1,14 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CoffinController : MonoBehaviour, Iinteractable {
+public class GraveScript : MonoBehaviour, Iinteractable{
+	public int digging_progress = 0;
+	public int digging_limit = 4; 
+	public bool dug_grave = false;
+
 	public void Interact(PlayerController playercontroller){
-		gameObject.transform.parent = playercontroller.transform;
+		digging_progress = digging_progress + 1;
+		if (digging_progress == 4) {
+			dug_grave = true;
+		}
 	}
 
 	public void StopInteract(PlayerController playercontroller) {
-		gameObject.transform.parent = null;
+		
 	}
+
 	// Use this for initialization
 	void Start () {
 	
@@ -18,4 +26,9 @@ public class CoffinController : MonoBehaviour, Iinteractable {
 	void Update () {
 	
 	}
+
+	void FixedUpdate () {
+	}
+
+
 }
