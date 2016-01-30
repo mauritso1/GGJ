@@ -1,19 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
-using XboxCtrlrInput;	
+using XboxCtrlrInput;
 
-public class PlayerController : MonoBehaviour {
+
+public class PlayerController : MonoBehaviour, Iinteractable {
 	private Vector3 newPosition;
-	private bool interaction_available;
+	private bool interaction_available = false;
+	private bool can_interact = true;
 	private Collider interaction_object;
-
+	private Iinteractable interaction_gameobject;
 	public Transform target;
-
 	public float turnSpeed;
 	public float speed;
 	public float maxMoveSpeed;
-
 	public int playerNumber = 0;
+
+	public void Interact(PlayerController playercontroller) {
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -40,19 +43,31 @@ public class PlayerController : MonoBehaviour {
 		transform.position = newPosition;
 
 		// Check for interaction 
-		if (interaction_available && XCI.GetButton (XboxButton.X, playerNumber)) {
-			interaction_object.gameObject.SetActive(false);
+		if (interaction_available && can_interact && XCI.GetButton (XboxButton.X, playerNumber)) {
+			can_interact = false;
+			interaction_gameobject.Interact (this);
+			transform.parent = gameObject.transform;
+			//interaction_object.gameObject.SetActive(false);
+		}
+		if (!can_interact && !(XCI.GetButton (XboxButton.X, playerNumber))) {
+			interaction_object.transform.parent = null;
+			can_interact = true;
 		}
 	}
 
 	void OnTriggerEnter(Collider other) {
-		if (other.gameObject.CompareTag("interactable")) {
+		if (other.CompareTag ("interactable") && can_interact) {
 			interaction_available = true;
 			interaction_object = other;
+			if (interaction_object is Iinteractable) {
+				interaction_gameobject = (Iinteractable)interaction_object;
+
+			}
 		}
-		else {
-			interaction_available = true;
-		}
+	}
+
+	void OnTriggerExit(Collider other) {
+			interaction_available = false;
 	}
 }
 
