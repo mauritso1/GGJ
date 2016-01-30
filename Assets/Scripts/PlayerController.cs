@@ -16,6 +16,10 @@ public class PlayerController : MonoBehaviour {
 	public float turnSpeed;
 	public float moveSpeed;
 	public Text pausedText;
+	private Transform door1;
+	private Transform door2;
+
+	public float smooth = 2.0F;
 
 	Rigidbody RB;
 
@@ -88,7 +92,10 @@ public class PlayerController : MonoBehaviour {
 		}
 
 		if (other.gameObject.CompareTag ("door")) {
-			Debug.Log ("ik heb je door");
+			Debug.Log ("Ik heb je door");
+			door1 = other.gameObject.transform.GetChild(0);
+			door2 = other.gameObject.transform.GetChild(1);
+			door1.transform.Rotate (0,-90,0);
 		}
 	}
 
