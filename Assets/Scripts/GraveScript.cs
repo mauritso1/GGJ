@@ -4,8 +4,8 @@ using System.Collections;
 public class GraveScript : MonoBehaviour, Iinteractable{
 	public int digging_limit = 4; 
 
-	private int digging_progress = 0;
-	private bool dug_grave = false;
+	public int digging_progress = 0;
+	public bool dug_grave = false;
 
 	public void Interact(PlayerController playercontroller){
 		if (digging_progress != digging_limit) {

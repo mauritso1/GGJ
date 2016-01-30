@@ -7,14 +7,13 @@ public class ZombieController : MonoBehaviour {
 
 	private Transform target;
 
-
-	// Use this for initialization
 	void Start () {
-	
 	}
 	
-	// Update is called once per frame
 	void Update () {
+		if (this.transform.parent) {
+			zombie_active = this.transform.parent.GetComponent<CoffinController> ().zombie_active;	
+		}
 		if (zombie_active) {
 			target = GameObject.Find ("Player").transform;
 			Vector3 relativePos = target.position - transform.position;

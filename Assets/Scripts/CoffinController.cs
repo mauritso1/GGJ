@@ -7,7 +7,7 @@ public class CoffinController : MonoBehaviour, Iinteractable {
 
 	private float timeLeft;
 	private float count_down; 
-	private bool zombie_active = false;
+	public bool zombie_active = false;
 
 	public void Interact(PlayerController playercontroller){
 		//gameObject.transform.parent = playercontroller.transform;
@@ -28,7 +28,10 @@ public class CoffinController : MonoBehaviour, Iinteractable {
 	
 	// Update is called once per frame
 	void Update () {
-
+		if (timeLeft <= 0) {
+			zombie_active = true;
+		} else {
+			timeLeft -= Time.deltaTime;
+		}
 	}
-		
 }
