@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: a9f2cc9ed61d527408efa37776382624
-timeCreated: 1454157472
+guid: 32997b97d942d7b4385d75890bef4793
+timeCreated: 1454169252
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -64,9 +64,9 @@ ModelImporter:
     400054: upperLegR
     400056: waist
     4300000: body
-    7400000: Armature|ArmatureAction
-    7400002: Armature|ArmatureAction.001
-    7400004: Armature|DunneWandel
+    7400000: Armature|Draag
+    7400002: Armature|DunneWandel
+    7400004: Armature|HouVast
     7400006: Armature|Idle
     7400008: Armature|LaatLos
     7400010: Armature|Pak
@@ -94,96 +94,10 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|ArmatureAction
-      takeName: Armature|ArmatureAction
+      name: Armature|Draag
+      takeName: Armature|Draag
       firstFrame: 0
-      lastFrame: 1
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: Armature
-        weight: 1
-      - path: Armature/character
-        weight: 1
-      - path: Armature/hipL
-        weight: 1
-      - path: Armature/hipL/upperLegL
-        weight: 1
-      - path: Armature/hipL/upperLegL/lowerLegL
-        weight: 1
-      - path: Armature/hipL/upperLegL/lowerLegL/footL
-        weight: 1
-      - path: Armature/hipL/upperLegL/lowerLegL/footL/footL_end
-        weight: 1
-      - path: Armature/hipR
-        weight: 1
-      - path: Armature/hipR/upperLegR
-        weight: 1
-      - path: Armature/hipR/upperLegR/lowerLegR
-        weight: 1
-      - path: Armature/hipR/upperLegR/lowerLegR/footR
-        weight: 1
-      - path: Armature/hipR/upperLegR/lowerLegR/footR/footR_end
-        weight: 1
-      - path: Armature/waist
-        weight: 1
-      - path: Armature/waist/torso
-        weight: 1
-      - path: Armature/waist/torso/neck
-        weight: 1
-      - path: Armature/waist/torso/neck/head
-        weight: 1
-      - path: Armature/waist/torso/neck/head/head_end
-        weight: 1
-      - path: Armature/waist/torso/shoulderL
-        weight: 1
-      - path: Armature/waist/torso/shoulderL/elbowL
-        weight: 1
-      - path: Armature/waist/torso/shoulderL/elbowL/armL
-        weight: 1
-      - path: Armature/waist/torso/shoulderL/elbowL/armL/handL
-        weight: 1
-      - path: Armature/waist/torso/shoulderL/elbowL/armL/handL/handL_end
-        weight: 1
-      - path: Armature/waist/torso/shoulderR
-        weight: 1
-      - path: Armature/waist/torso/shoulderR/elbowR
-        weight: 1
-      - path: Armature/waist/torso/shoulderR/elbowR/armR
-        weight: 1
-      - path: Armature/waist/torso/shoulderR/elbowR/armR/handR
-        weight: 1
-      - path: Armature/waist/torso/shoulderR/elbowR/armR/handR/handR_end
-        weight: 1
-      - path: body
-        weight: 1
-      maskType: 0
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Armature|ArmatureAction.001
-      takeName: Armature|ArmatureAction.001
-      firstFrame: 0
-      lastFrame: 1
+      lastFrame: 24
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -276,8 +190,94 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 1
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/character
+        weight: 1
+      - path: Armature/hipL
+        weight: 1
+      - path: Armature/hipL/upperLegL
+        weight: 1
+      - path: Armature/hipL/upperLegL/lowerLegL
+        weight: 1
+      - path: Armature/hipL/upperLegL/lowerLegL/footL
+        weight: 1
+      - path: Armature/hipL/upperLegL/lowerLegL/footL/footL_end
+        weight: 1
+      - path: Armature/hipR
+        weight: 1
+      - path: Armature/hipR/upperLegR
+        weight: 1
+      - path: Armature/hipR/upperLegR/lowerLegR
+        weight: 1
+      - path: Armature/hipR/upperLegR/lowerLegR/footR
+        weight: 1
+      - path: Armature/hipR/upperLegR/lowerLegR/footR/footR_end
+        weight: 1
+      - path: Armature/waist
+        weight: 1
+      - path: Armature/waist/torso
+        weight: 1
+      - path: Armature/waist/torso/neck
+        weight: 1
+      - path: Armature/waist/torso/neck/head
+        weight: 1
+      - path: Armature/waist/torso/neck/head/head_end
+        weight: 1
+      - path: Armature/waist/torso/shoulderL
+        weight: 1
+      - path: Armature/waist/torso/shoulderL/elbowL
+        weight: 1
+      - path: Armature/waist/torso/shoulderL/elbowL/armL
+        weight: 1
+      - path: Armature/waist/torso/shoulderL/elbowL/armL/handL
+        weight: 1
+      - path: Armature/waist/torso/shoulderL/elbowL/armL/handL/handL_end
+        weight: 1
+      - path: Armature/waist/torso/shoulderR
+        weight: 1
+      - path: Armature/waist/torso/shoulderR/elbowR
+        weight: 1
+      - path: Armature/waist/torso/shoulderR/elbowR/armR
+        weight: 1
+      - path: Armature/waist/torso/shoulderR/elbowR/armR/handR
+        weight: 1
+      - path: Armature/waist/torso/shoulderR/elbowR/armR/handR/handR_end
+        weight: 1
+      - path: body
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|HouVast
+      takeName: Armature|HouVast
+      firstFrame: 0
+      lastFrame: 7
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -362,8 +362,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
