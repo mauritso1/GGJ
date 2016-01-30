@@ -2,6 +2,12 @@
 using System.Collections;
 
 public class CoffinController : MonoBehaviour, Iinteractable {
+	public int time_variance;
+	public float time_delay;
+
+	private float timeLeft;
+	private float count_down; 
+	private bool zombie_active = false;
 
 	public void Interact(PlayerController playercontroller){
 		//gameObject.transform.parent = playercontroller.transform;
@@ -16,11 +22,13 @@ public class CoffinController : MonoBehaviour, Iinteractable {
 	}
 	// Use this for initialization
 	void Start () {
-	
+		timeLeft = time_delay + (float)Random.Range (-time_variance, time_variance);
+		Debug.Log (timeLeft);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+
 	}
+		
 }

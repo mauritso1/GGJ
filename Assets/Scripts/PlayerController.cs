@@ -4,13 +4,15 @@ using XboxCtrlrInput;
 
 
 public class PlayerController : MonoBehaviour {
-
+	public bool paused;
 	public Transform target;
 	public float turnSpeed;
 	public float speed;
 	public float maxMoveSpeed;
 	public int playerNumber = 0;
+	private float pause_timeout;
 
+	public GameController gc;
 	private Vector3 newPosition;
 	private bool interaction_available = false;
 	private bool can_interact = true;
@@ -19,12 +21,20 @@ public class PlayerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		gc = GameObject.Find("GameController").GetComponent<GameController>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		// (un)pause game
+		if (XCI.GetButton (XboxButton.B, playerNumber) && pause_timeout <= 0) {
+			gc.PauseUnPause();
+			pause_timeout = 1f;
+		}
+		if (pause_timeout > 0) {
+			pause_timeout -= 0.1f;
+			Debug.Log (pause_timeout);
+		}
 	}
 
 	void FixedUpdate () {
@@ -52,6 +62,7 @@ public class PlayerController : MonoBehaviour {
 			interaction_gameobject.StopInteract (this);
 			can_interact = true;
 		}
+			
 	}
 
 	void OnTriggerEnter(Collider other) {
