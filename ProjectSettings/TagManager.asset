@@ -6,10 +6,7 @@ TagManager:
   tags:
   - zombie
   - interactable
-<<<<<<< Updated upstream
   - door
-=======
->>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
