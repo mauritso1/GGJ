@@ -10,8 +10,8 @@ public class PlayerController : MonoBehaviour {
 	public Transform target;
 	private Vector3 direction;
 	private bool interaction_available = false;
-	private bool can_interact = true;
-	private Collider interaction_object;
+	public bool can_interact = true;
+	public Collider interaction_object;
 	private Iinteractable interaction_gameobject;
 	public float turnSpeed;
 	public float moveSpeed;
