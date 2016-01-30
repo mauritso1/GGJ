@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour {
 	public Text pausedText;
 	private Transform door1;
 	private Transform door2;
+	private bool door_open;
 
 	public float smooth = 2.0F;
 
@@ -93,14 +94,31 @@ public class PlayerController : MonoBehaviour {
 
 		if (other.gameObject.CompareTag ("door")) {
 			Debug.Log ("Ik heb je door");
-			door1 = other.gameObject.transform.GetChild(0);
-			door2 = other.gameObject.transform.GetChild(1);
-			door1.transform.Rotate (0,-90,0);
+			door1 = other.gameObject.transform.GetChild (0);
+			door2 = other.gameObject.transform.GetChild (1);
+	
+			if (door_open == false) {
+				door1.rotation = door1.transform.rotation * Quaternion.Euler (0, 0, -90);
+				door2.rotation = door2.transform.rotation * Quaternion.Euler (0, 0, 90);
+			}
+			door_open = !door_open;
 		}
 	}
 
 	void OnTriggerExit(Collider other) {
 			interaction_available = false;
+
+		if (other.gameObject.CompareTag ("door")) {
+			Debug.Log ("Ik heb je door");
+			door1 = other.gameObject.transform.GetChild (0);
+			door2 = other.gameObject.transform.GetChild (1);
+
+			if (door_open == true) {
+				door1.rotation = door1.transform.rotation * Quaternion.Euler (0, 0, 90);
+				door2.rotation = door2.transform.rotation * Quaternion.Euler (0, 0, -90);
+			}
+			door_open = !door_open;
+		}
 	}
 }
 
