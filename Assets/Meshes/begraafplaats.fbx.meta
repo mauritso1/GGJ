@@ -1,0 +1,181 @@
+fileFormatVersion: 2
+guid: b55e2a615ad52e74fb2c5d28cb8952b6
+timeCreated: 1454116869
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Gaten
+    100004: Gras
+    100006: Heg
+    100008: Heg.001
+    100010: Hek
+    100012: Steen.000
+    100014: Steen.001
+    100016: Steen.002
+    100018: Steen.003
+    100020: Steen.004
+    100022: Steen.005
+    100024: Steen.006
+    100026: Steen.007
+    100028: Steen.008
+    100030: Steen.009
+    100032: Steen.010
+    100034: Steen.011
+    100036: Weg
+    400000: //RootNode
+    400002: Gaten
+    400004: Gras
+    400006: Heg
+    400008: Heg.001
+    400010: Hek
+    400012: Steen.000
+    400014: Steen.001
+    400016: Steen.002
+    400018: Steen.003
+    400020: Steen.004
+    400022: Steen.005
+    400024: Steen.006
+    400026: Steen.007
+    400028: Steen.008
+    400030: Steen.009
+    400032: Steen.010
+    400034: Steen.011
+    400036: Weg
+    2300000: Gaten
+    2300002: Gras
+    2300004: Heg
+    2300006: Heg.001
+    2300008: Hek
+    2300010: Steen.000
+    2300012: Steen.001
+    2300014: Steen.002
+    2300016: Steen.003
+    2300018: Steen.004
+    2300020: Steen.005
+    2300022: Steen.006
+    2300024: Steen.007
+    2300026: Steen.008
+    2300028: Steen.009
+    2300030: Steen.010
+    2300032: Steen.011
+    2300034: Weg
+    3300000: Gaten
+    3300002: Gras
+    3300004: Heg
+    3300006: Heg.001
+    3300008: Hek
+    3300010: Steen.000
+    3300012: Steen.001
+    3300014: Steen.002
+    3300016: Steen.003
+    3300018: Steen.004
+    3300020: Steen.005
+    3300022: Steen.006
+    3300024: Steen.007
+    3300026: Steen.008
+    3300028: Steen.009
+    3300030: Steen.010
+    3300032: Steen.011
+    3300034: Weg
+    4300000: Steen.011
+    4300002: Steen.010
+    4300004: Steen.009
+    4300006: Steen.008
+    4300008: Steen.007
+    4300010: Steen.006
+    4300012: Steen.004
+    4300014: Steen.003
+    4300016: Steen.002
+    4300018: Steen.001
+    4300020: Steen.000
+    4300022: Heg.001
+    4300024: Steen.005
+    4300026: Gaten
+    4300028: Weg
+    4300030: Gras
+    4300032: Hek
+    4300034: Heg
+    6400000: Gaten
+    6400002: Gras
+    6400004: Heg
+    6400006: Heg.001
+    6400008: Hek
+    6400010: Steen.000
+    6400012: Steen.001
+    6400014: Steen.002
+    6400016: Steen.003
+    6400018: Steen.004
+    6400020: Steen.005
+    6400022: Steen.006
+    6400024: Steen.007
+    6400026: Steen.008
+    6400028: Steen.009
+    6400030: Steen.010
+    6400032: Steen.011
+    6400034: Weg
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

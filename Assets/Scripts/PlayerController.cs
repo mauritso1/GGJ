@@ -3,14 +3,26 @@ using System.Collections;
 using XboxCtrlrInput;
 
 
+<<<<<<< HEAD
+public class PlayerController : MonoBehaviour, Iinteractable {
+	private Vector3 direction;
+	private bool interaction_available = false;
+	private bool can_interact = true;
+	private Collider interaction_object;
+	private Iinteractable interaction_gameobject;
+=======
 public class PlayerController : MonoBehaviour {
 	public bool paused;
+>>>>>>> d2f1ddd661ac91607e66e6ca69eb0f01450fd5df
 	public Transform target;
 	public float turnSpeed;
-	public float speed;
-	public float maxMoveSpeed;
+	public float moveSpeed;
 	public int playerNumber = 0;
+<<<<<<< HEAD
+	Rigidbody RB;
+=======
 	private float pause_timeout;
+>>>>>>> d2f1ddd661ac91607e66e6ca69eb0f01450fd5df
 
 	public GameController gc;
 	private Vector3 newPosition;
@@ -21,7 +33,11 @@ public class PlayerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+<<<<<<< HEAD
+		RB = this.transform.GetComponent<Rigidbody>();
+=======
 		gc = GameObject.Find("GameController").GetComponent<GameController>();
+>>>>>>> d2f1ddd661ac91607e66e6ca69eb0f01450fd5df
 	}
 	
 	// Update is called once per frame
@@ -46,10 +62,11 @@ public class PlayerController : MonoBehaviour {
 		transform.forward = Vector3.Lerp(transform.forward, Vector3.Normalize(new Vector3(axisX, 0f, axisY)), turnSpeed);
 
 		// Calculate and set new position
-		float newPosX = newPosition.x + (axisX * maxMoveSpeed);
-		float newPosZ = newPosition.z + (axisY * maxMoveSpeed);
-		newPosition = new Vector3(newPosX, transform.position.y, newPosZ);
-		transform.position = newPosition;
+		float dirX = (axisX * moveSpeed);
+		float dirZ = (axisY * moveSpeed);
+		direction = new Vector3(dirX, transform.position.y, dirZ);
+		RB.AddForce(moveSpeed * direction);
+
 
 		// Check/trigger interaction 
 		if (interaction_available && can_interact && XCI.GetButton (XboxButton.X, playerNumber)) {
