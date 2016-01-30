@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using XboxCtrlrInput;
+using UnityEngine.UI;
 
 
 public class PlayerController : MonoBehaviour {
@@ -14,6 +15,7 @@ public class PlayerController : MonoBehaviour {
 	private Iinteractable interaction_gameobject;
 	public float turnSpeed;
 	public float moveSpeed;
+	public Text pausedText;
 
 	Rigidbody RB;
 
@@ -73,9 +75,15 @@ public class PlayerController : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other) {
 		Debug.Log(other.gameObject);
-		if (other.gameObject.CompareTag("interactable") && can_interact) {
-			interaction_available = true;
-			interaction_gameobject = other.GetComponent<Iinteractable>();
+		interaction_object = other;
+		if (other.gameObject.CompareTag("interactable")) {
+			if (can_interact) {
+				interaction_available = true;
+				interaction_gameobject = other.GetComponent<Iinteractable>();
+			}
+		}
+		if (other.gameObject.CompareTag("zombie")) {
+			pausedText.text = "Game over";
 		}
 	}
 
