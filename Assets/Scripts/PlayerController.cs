@@ -86,6 +86,10 @@ public class PlayerController : MonoBehaviour {
 			Debug.Log ("Game over");
 			pausedText.text = "Game over";
 		}
+
+		if (other.gameObject.CompareTag ("door")) {
+			Debug.Log ("ik heb je door");
+		}
 	}
 
 	void OnTriggerExit(Collider other) {
