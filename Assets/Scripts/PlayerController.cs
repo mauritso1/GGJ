@@ -4,17 +4,18 @@ using XboxCtrlrInput;
 
 
 public class PlayerController : MonoBehaviour {
-	private Vector3 newPosition;
-	private bool interaction_available = false;
-	private bool can_interact = true;
-	private Collider interaction_object;
-	private Iinteractable interaction_gameobject;
+
 	public Transform target;
 	public float turnSpeed;
 	public float speed;
 	public float maxMoveSpeed;
 	public int playerNumber = 0;
 
+	private Vector3 newPosition;
+	private bool interaction_available = false;
+	private bool can_interact = true;
+	private Collider interaction_object;
+	private Iinteractable interaction_gameobject;
 
 	// Use this for initialization
 	void Start () {
@@ -40,12 +41,13 @@ public class PlayerController : MonoBehaviour {
 		newPosition = new Vector3(newPosX, transform.position.y, newPosZ);
 		transform.position = newPosition;
 
-		// Check for interaction 
+		// Check/trigger interaction 
 		if (interaction_available && can_interact && XCI.GetButton (XboxButton.X, playerNumber)) {
 			can_interact = false;
 			interaction_gameobject.Interact (this);
 		}
 
+		// Check/trigger the end of the interaction
 		if (!can_interact && !(XCI.GetButton (XboxButton.X, playerNumber))) {
 			interaction_gameobject.StopInteract (this);
 			can_interact = true;
