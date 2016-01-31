@@ -8,10 +8,17 @@ public class GameController : MonoBehaviour {
 	public Text PausedText;
 	private int score;
 
+	private float time = 0f;
+	private float arrivalInterval = 60f; // 60 seconden verwachtingswaarde
+	private float minInterval = 30f;
+	private float next = 0f;
+
 	// Use this for initialization
 	void Start () {
 		score = 0;
 		PausedText.text = "";
+		time = Time.time;
+
 	}
 
 	public void PauseUnPause () {
@@ -36,6 +43,16 @@ public class GameController : MonoBehaviour {
 		}
 		score += 1;
 		ScoreText.text = "Score: "+ score.ToString ();
+
+		// check if a car should arrive
+		if (time > next) {
+			SpawnCoffin();
+			//next = Random.
+		}
+		time += Time.fixedDeltaTime;
+	}
+
+	public void SpawnCoffin() {
 
 	}
 }
