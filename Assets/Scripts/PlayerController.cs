@@ -131,8 +131,9 @@ public class PlayerController : MonoBehaviour {
 			door2 = other.gameObject.transform.GetChild (1);
 	
 			if (door_open == false) {
-				door1.rotation = door1.transform.rotation * Quaternion.Euler (0, 0, -90);
-				door2.rotation = door2.transform.rotation * Quaternion.Euler (0, 0, 90);
+				
+				door1.GetComponent<DoorScript>().Open();
+				door2.GetComponent<DoorScript>().Open();
 				door_open = !door_open;
 			}
 		}
@@ -142,13 +143,12 @@ public class PlayerController : MonoBehaviour {
 			interaction_available = false;
 
 			if (other.gameObject.CompareTag ("door")) {
-			Debug.Log ("close door");
 			door1 = other.gameObject.transform.GetChild (0);
 			door2 = other.gameObject.transform.GetChild (1);
 
 			if (door_open == true) {
-				door1.rotation = door1.transform.rotation * Quaternion.Euler (0, 0, 90);
-				door2.rotation = door2.transform.rotation * Quaternion.Euler (0, 0, -90);
+				door1.GetComponent<DoorScript>().Close();
+				door2.GetComponent<DoorScript>().Close();
 				door_open = !door_open;
 			}
 

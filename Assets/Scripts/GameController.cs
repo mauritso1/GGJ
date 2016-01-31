@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour {
 
 	private float time = 0f;
 	private float arrivalInterval = 60f; // 60 seconden verwachtingswaarde
-	private float minInterval = 30f;
+	private float minInterval = 30f;  // verstoort wel de verwachtingswaarde
 	private float next = 0f;
 
 	// Use this for initialization
@@ -47,12 +47,18 @@ public class GameController : MonoBehaviour {
 		// check if a car should arrive
 		if (time > next) {
 			SpawnCoffin();
-			//next = Random.
+			next = Random.Range(0.001f,0.999f);
+			next = - arrivalInterval * Mathf.Log(1 - next);
+			next = Mathf.Max(minInterval, next);
+			Debug.Log(next);
+			next += time;
 		}
 		time += Time.fixedDeltaTime;
 	}
 
 	public void SpawnCoffin() {
+		Debug.Log("spawn coffin");
+
 
 	}
 }
