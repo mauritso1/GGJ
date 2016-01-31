@@ -35,7 +35,7 @@ public class GameController : MonoBehaviour {
 			Debug.Log ("Paused");
 		}
 		score += 1;
-		ScoreText.text = score.ToString ();
+		ScoreText.text = "Score: "+ score.ToString ();
 
 	}
 }

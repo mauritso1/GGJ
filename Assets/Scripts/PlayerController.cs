@@ -19,8 +19,10 @@ public class PlayerController : MonoBehaviour {
 	private Transform door1;
 	private Transform door2;
 	private bool door_open;
-	private bool shoveling;
+	public int giveObject;
 	public float jumpForce;
+	public bool shoveling = false;
+		
 	Animator Ani;
 
 	public float smooth = 2.0F;
@@ -33,7 +35,6 @@ public class PlayerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		shoveling = false;
 		Ani=transform.GetChild(0).transform.GetComponent<Animator>();
 		Ani.SetBool("Lopend", false);
 		RB = this.transform.GetComponent<Rigidbody> ();
@@ -70,8 +71,14 @@ public class PlayerController : MonoBehaviour {
 
 		// Jump
 		if(XCI.GetButton (XboxButton.A, playerNumber)){
-			if (Physics.Raycast(transform.position, Vector3.down)) {
-				RB.AddForce(Vector3.up*jumpForce);
+			Ray ray = new Ray(transform.position + Vector3.up, Vector3.down);
+			Debug.DrawRay(ray.origin, ray.direction);
+			if (Physics.Raycast(ray,1f)) {
+				if (transform.localPosition.y < -2.37f) {
+					RB.AddForce(Vector3.up*5*jumpForce);
+				} else {
+					RB.AddForce(Vector3.up*jumpForce);
+				}
 			}
 
 		}
@@ -119,31 +126,32 @@ public class PlayerController : MonoBehaviour {
 		}
 
 		if (other.gameObject.CompareTag ("door")) {
-			Debug.Log ("Ik heb je door");
+			
 			door1 = other.gameObject.transform.GetChild (0);
 			door2 = other.gameObject.transform.GetChild (1);
 	
 			if (door_open == false) {
 				door1.rotation = door1.transform.rotation * Quaternion.Euler (0, 0, -90);
 				door2.rotation = door2.transform.rotation * Quaternion.Euler (0, 0, 90);
+				door_open = !door_open;
 			}
-			door_open = !door_open;
 		}
 	}
 
 	void OnTriggerExit(Collider other) {
 			interaction_available = false;
 
-		if (other.gameObject.CompareTag ("door")) {
-			Debug.Log ("Ik heb je door");
+			if (other.gameObject.CompareTag ("door")) {
+			Debug.Log ("close door");
 			door1 = other.gameObject.transform.GetChild (0);
 			door2 = other.gameObject.transform.GetChild (1);
 
 			if (door_open == true) {
 				door1.rotation = door1.transform.rotation * Quaternion.Euler (0, 0, 90);
 				door2.rotation = door2.transform.rotation * Quaternion.Euler (0, 0, -90);
+				door_open = !door_open;
 			}
-			door_open = !door_open;
+
 		}
 	}
 }

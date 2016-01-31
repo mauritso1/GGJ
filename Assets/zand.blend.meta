@@ -1,42 +1,17 @@
 fileFormatVersion: 2
-guid: 20767b83b333015448f047a0d221a05d
-timeCreated: 1454195310
+guid: 50398ef243861ea4b8b2dc2c95d17c53
+timeCreated: 1454197436
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Cube.002
-    100002: Cube.006
-    100004: Cube.007
-    100006: Deur1
-    100008: Deur2
-    100010: //RootNode
-    400000: Cube.002
-    400002: Cube.006
-    400004: Cube.007
-    400006: Deur1
-    400008: Deur2
-    400010: //RootNode
-    2300000: Cube.002
-    2300002: Cube.006
-    2300004: Cube.007
-    2300006: Deur1
-    2300008: Deur2
-    3300000: Cube.002
-    3300002: Cube.006
-    3300004: Cube.007
-    3300006: Deur1
-    3300008: Deur2
-    4300000: Cube.007
-    4300002: Cube.006
-    4300004: Deur1
-    4300006: Deur2
-    4300008: Cube.002
-    6400000: Cube.002
-    6400002: Cube.006
-    6400004: Cube.007
-    6400006: Deur1
-    6400008: Deur2
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Plane_001
+    7400000: Default Take
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -61,7 +36,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 5
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -95,7 +70,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
